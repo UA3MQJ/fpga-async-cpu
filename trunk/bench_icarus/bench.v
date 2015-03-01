@@ -15,7 +15,7 @@ reg  ta0,ta1,tb0,tb1;
 
 wire result0, result1;
 
-thor thor_0(ta0, ta1, tb0, tb1, result0, result1);
+thand thor_0(ta0, ta1, tb0, tb1, result0, result1);
 
 initial
 begin

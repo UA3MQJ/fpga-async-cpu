@@ -1,5 +1,5 @@
 $date
-	Sun Mar 01 23:51:58 2015
+	Mon Mar 02 02:13:41 2015
 $end
 $version
 	Icarus Verilog
@@ -22,16 +22,16 @@ $var wire 1 & b1 $end
 $var wire 1 ! th1 $end
 $var wire 1 " th0 $end
 $scope module th22_0 $end
-$var wire 1 # a $end
-$var wire 1 % b $end
-$var reg 1 " th $end
+$var wire 1 $ a $end
+$var wire 1 & b $end
+$var reg 1 ! th $end
 $upscope $end
 $scope module th34w22_0 $end
-$var wire 1 $ a $end
-$var wire 1 # b $end
-$var wire 1 % c $end
-$var wire 1 & d $end
-$var reg 1 ! th $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 & c $end
+$var wire 1 % d $end
+$var reg 1 " th $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -60,11 +60,18 @@ $end
 1#
 #5000
 1&
+#5100
+1"
 #6000
 0&
 0#
+#6100
+0"
 #7000
 1$
 #8000
 1&
+#8100
+1!
+1"
 #9000
