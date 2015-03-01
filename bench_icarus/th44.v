@@ -1,6 +1,6 @@
 module th44(a, b, c, d, th);
 
-input wire a, b, c;
+input wire a, b, c, d;
 output reg th;
 
 initial th <= 1'b0;
