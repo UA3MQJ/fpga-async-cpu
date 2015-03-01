@@ -1,3 +1,3 @@
-iverilog -o test -I../modules -y../modules bench.v
+iverilog -o test -I./ -y./ bench.v
 vvp test
 pause
