@@ -11,60 +11,65 @@ begin
 end
 
 //not test
-reg  ta0,ta1,tb0,tb1;
+reg [2:0] comb;
+reg isnull;
 
-wire result0, result1;
+wire z0, z1, c0, c1;
+wire ta0 = (isnull == 1) ? 0 : ~comb[0:0];
+wire tb0 = (isnull == 1) ? 0 : ~comb[1:1];
+wire tc0 = (isnull == 1) ? 0 : ~comb[2:2];
 
-thand thor_0(ta0, ta1, tb0, tb1, result0, result1);
+wire #10 ta1 = (isnull == 1) ? 0 : ~ta0;
+wire #10 tb1 = (isnull == 1) ? 0 : ~tb0;
+wire #10 tc1 = (isnull == 1) ? 0 : ~tc0;
+
+
+thfadd th_0(ta0, ta1, tb0, tb1, tc0, tc1, z0, z1, c0, c1);
 
 initial
 begin
-	ta0 <= 0; // a = null
-	ta1 <= 0; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd0;
+	isnull <=0;
 	#100;
-	ta0 <= 1; // a = 0
-	ta1 <= 0; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd1;
+	isnull <=0;
 	#100;
-	ta0 <= 1; // a = 0
-	ta1 <= 0; //
-	tb0 <= 1; // b = 0
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd2;
+	isnull <=0;
 	#100;
-	ta0 <= 0; // a = null
-	ta1 <= 0; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd3;
+	isnull <=0;
 	#100;
-	ta0 <= 1; // a = 0
-	ta1 <= 0; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd4;
+	isnull <=0;
 	#100;
-	ta0 <= 1; // a = 0
-	ta1 <= 0; //
-	tb0 <= 0; // b = 1
-	tb1 <= 1; //
+	isnull <=1;
+	#50;
+	comb <= 3'd5;
+	isnull <=0;
 	#100;
-	ta0 <= 0; // a = null
-	ta1 <= 0; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd6;
+	isnull <=0;
 	#100;
-	ta0 <= 0; // a = 1
-	ta1 <= 1; //
-	tb0 <= 0; // b = null
-	tb1 <= 0; //
+	isnull <=1;
+	#50;
+	comb <= 3'd7;
+	isnull <=0;
 	#100;
-	ta0 <= 0; // a = 1
-	ta1 <= 1; //
-	tb0 <= 0; // b = 1
-	tb1 <= 1; //
-	#100;
-
+	isnull <=1;
+	#50;
 
 	
 end
